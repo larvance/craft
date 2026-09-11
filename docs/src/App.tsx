@@ -72,7 +72,7 @@ export default function App() {
     if (typeof window !== 'undefined' && window.location && window.location.origin) {
       return window.location.origin;
     }
-    return 'https://craft.larvance.net';
+    return 'https://craft.larvance.com';
   };
 
   const baseUrl = getBaseUrl();

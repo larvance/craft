@@ -11,10 +11,6 @@
   },
   "routes": [
     {
-      "pattern": "craft.larvance.net",
-      "custom_domain": true
-    },
-    {
       "pattern": "craft.larvance.com",
       "custom_domain": true
     }
