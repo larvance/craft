@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# modalx Documentation Deployment Script
-# Builds and deploys documentation to https://modalx.larvance.com
+# modalx Documentation Build & Deployment Script (GitHub Pages)
+# https://modalx.larvance.com
 # ==============================================================================
 
 set -euo pipefail
@@ -9,10 +9,14 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${SCRIPT_DIR}"
 
-echo "[1/2] Building VitePress documentation..."
+echo "==> Building VitePress documentation..."
 npm run docs:build
 
-echo "[2/2] Deploying to Cloudflare Pages (modalx.larvance.com)..."
-npx wrangler deploy
-
-echo "Done! modalx documentation is live at https://modalx.larvance.com"
+echo ""
+echo "=================================================================="
+echo "[OK] modalx documentation built successfully in .vitepress/dist/"
+echo "=================================================================="
+echo " Target domain: https://modalx.larvance.com"
+echo " Deploy engine: GitHub Actions (deploy-docs.yml)"
+echo " Notice: Deployments are automated on git push to main."
+echo "=================================================================="
